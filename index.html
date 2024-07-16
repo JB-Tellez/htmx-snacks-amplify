@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@2.0.1" integrity="sha384-QWGpdj554B4ETpJJC9z+ZHJcA/i59TyjxEPXiiUgN2WmTyV5OEZWCD6gQhgkdpB/" crossorigin="anonymous"></script>
+    <meta name="htmx-config" content='{"selfRequestsOnly":"false"}'>
+    <title>Snacks HTMX</title> 
+</head>
+<body>
+    <h1>Snacks HTMX</h1>
+    <ul>
+        <li hx-get="https://ne1mle7a3e.execute-api.us-west-2.amazonaws.com/" hx-trigger="load" hx-swap="outerHTML">
+            Loading snacks...
+        </li>
+    </ul>
+</body>
+</html>
