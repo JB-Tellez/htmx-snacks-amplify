@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/htmx.org@1.9.12" crossorigin="anonymous"></script>
     <title>Snacks HTMX</title> 
 </head>
 <body>
     <h1>Snacks HTMX</h1>
     <ul>
-        <li hx-get="https://thq8m0qj3k.execute-api.us-west-2.amazonaws.com/snacks" hx-trigger="load" hx-swap="outerHTML">
+        <li>
             Loading snacks...
         </li>
     </ul>
+    <script>
+        // make api request that returns json
+        fetch('https://thq8m0qj3k.execute-api.us-west-2.amazonaws.com/snacks')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+               document.querySelector('ul').innerHTML = data.snacks[0].name;
+            });
+    </script>
 </body>
 </html>
